@@ -9,11 +9,13 @@ object Hello {
     val props = Props[MyActor]
     val actor = system.actorOf(props, name = "myActor")
 
-    val msg = new MyCaseClass(123, "abc")
+    val msg1 = new MyCaseClass(123, "abc")
+    val msg2 = "test"
 
     for(i <- 1 to 5) {
       Thread.sleep(1000)
-      actor ! msg
+      actor ! msg1
+      actor ! msg2
     }
     system.terminate()
   }

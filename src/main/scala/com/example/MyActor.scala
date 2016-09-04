@@ -10,7 +10,10 @@ class MyActor extends Actor {
 
   def receive = {
     case MyCaseClass(prop1, prop2) => {
-      log.info("prop1: %d, prop2: %s" format (prop1, prop2))
+      log.info("prop1: %d, prop2: %s" format(prop1, prop2))
+    }
+    case s: String => {
+      log.info("%s" format s)
     }
     case _ => {
     }
