@@ -15,6 +15,8 @@ object Hello {
     // ただの文字列
     val msg2 = "test"
 
+    // オリジナルだと無限ループにしてたけど、終わらせたかったので
+    // 5回ループしたら抜けるようにした
     for(i <- 1 to 5) {
       Thread.sleep(1000)
       actor ! msg1
